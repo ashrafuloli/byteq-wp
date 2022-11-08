@@ -739,9 +739,9 @@ function locale_stylesheet() {
 function switch_theme( $stylesheet ) {
 	global $wp_theme_directories, $wp_customize, $sidebars_widgets;
 
-	$requirements = validate_theme_requirements( $stylesheet );
-	if ( is_wp_error( $requirements ) ) {
-		wp_die( $requirements );
+	$byteq = validate_theme_byteq( $stylesheet );
+	if ( is_wp_error( $byteq ) ) {
+		wp_die( $byteq );
 	}
 
 	$_sidebars_widgets = null;
@@ -902,7 +902,7 @@ function validate_current_theme() {
 }
 
 /**
- * Validates the theme requirements for WordPress version and PHP version.
+ * Validates the theme byteq for WordPress version and PHP version.
  *
  * Uses the information from `Requires at least` and `Requires PHP` headers
  * defined in the theme's `style.css` file.
@@ -911,25 +911,25 @@ function validate_current_theme() {
  * @since 5.8.0 Removed support for using `readme.txt` as a fallback.
  *
  * @param string $stylesheet Directory name for the theme.
- * @return true|WP_Error True if requirements are met, WP_Error on failure.
+ * @return true|WP_Error True if byteq are met, WP_Error on failure.
  */
-function validate_theme_requirements( $stylesheet ) {
+function validate_theme_byteq( $stylesheet ) {
 	$theme = wp_get_theme( $stylesheet );
 
-	$requirements = array(
+	$byteq = array(
 		'requires'     => ! empty( $theme->get( 'RequiresWP' ) ) ? $theme->get( 'RequiresWP' ) : '',
 		'requires_php' => ! empty( $theme->get( 'RequiresPHP' ) ) ? $theme->get( 'RequiresPHP' ) : '',
 	);
 
-	$compatible_wp  = is_wp_version_compatible( $requirements['requires'] );
-	$compatible_php = is_php_version_compatible( $requirements['requires_php'] );
+	$compatible_wp  = is_wp_version_compatible( $byteq['requires'] );
+	$compatible_php = is_php_version_compatible( $byteq['requires_php'] );
 
 	if ( ! $compatible_wp && ! $compatible_php ) {
 		return new WP_Error(
 			'theme_wp_php_incompatible',
 			sprintf(
 				/* translators: %s: Theme name. */
-				_x( '<strong>Error:</strong> Current WordPress and PHP versions do not meet minimum requirements for %s.', 'theme' ),
+				_x( '<strong>Error:</strong> Current WordPress and PHP versions do not meet minimum byteq for %s.', 'theme' ),
 				$theme->display( 'Name' )
 			)
 		);
@@ -938,7 +938,7 @@ function validate_theme_requirements( $stylesheet ) {
 			'theme_php_incompatible',
 			sprintf(
 				/* translators: %s: Theme name. */
-				_x( '<strong>Error:</strong> Current PHP version does not meet minimum requirements for %s.', 'theme' ),
+				_x( '<strong>Error:</strong> Current PHP version does not meet minimum byteq for %s.', 'theme' ),
 				$theme->display( 'Name' )
 			)
 		);
@@ -947,7 +947,7 @@ function validate_theme_requirements( $stylesheet ) {
 			'theme_wp_incompatible',
 			sprintf(
 				/* translators: %s: Theme name. */
-				_x( '<strong>Error:</strong> Current WordPress version does not meet minimum requirements for %s.', 'theme' ),
+				_x( '<strong>Error:</strong> Current WordPress version does not meet minimum byteq for %s.', 'theme' ),
 				$theme->display( 'Name' )
 			)
 		);

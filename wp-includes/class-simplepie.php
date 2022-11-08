@@ -1386,7 +1386,7 @@ class SimplePie
 	 */
 	public function init()
 	{
-		// Check absolute bare minimum requirements.
+		// Check absolute bare minimum byteq.
 		if (!extension_loaded('xml') || !extension_loaded('pcre'))
 		{
 			$this->error = 'XML or PCRE extensions not loaded!';

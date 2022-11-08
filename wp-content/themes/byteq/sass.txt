@@ -1,0 +1,5 @@
+sass --watch C:\laragon\www\wp-project\byteq\wp-content\themes\byteq\assets\scss\main.scss:C:\laragon\www\wp-project\byteq\wp-content\themes\byteq\assets\css\main.css
+
+sass --watch /Users/ashrafuloli/www/byteq-wp/wp-content/themes/byteq/assets/scss/main.scss:/Users/ashrafuloli/www/byteq-wp/wp-content/themes/byteq/assets/css/main.css
+
+

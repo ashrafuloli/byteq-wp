@@ -142,7 +142,7 @@ Writes:
 
 
 
-Requirements
+Byteq
 ===========================================================================
 
 * PHP 4.2.0 up to 5.2.x for getID3() 1.7.x  (and earlier)

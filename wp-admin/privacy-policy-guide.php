@@ -67,7 +67,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 	<p><?php _e( 'This text template will help you to create your web site&#8217;s privacy policy.' ); ?></p>
 	<p><?php _e( 'The template contains a suggestion of sections you most likely will need. Under each section heading you will find a short summary of what information you should provide, which will help you to get started. Some sections include suggested policy content, others will have to be completed with information from your theme and plugins.' ); ?></p>
 	<p><?php _e( 'Please edit your privacy policy content, making sure to delete the summaries, and adding any information from your theme and plugins. Once you publish your policy page, remember to add it to your navigation menu.' ); ?></p>
-	<p><?php _e( 'It is your responsibility to write a comprehensive privacy policy, to make sure it reflects all national and international legal requirements on privacy, and to keep your policy current and accurate.' ); ?></p>
+	<p><?php _e( 'It is your responsibility to write a comprehensive privacy policy, to make sure it reflects all national and international legal byteq on privacy, and to keep your policy current and accurate.' ); ?></p>
 	<div class="privacy-settings-accordion">
 		<h4 class="privacy-settings-accordion-heading">
 			<button aria-expanded="false" class="privacy-settings-accordion-trigger" aria-controls="privacy-settings-accordion-block-privacy-policy-guide" type="button">

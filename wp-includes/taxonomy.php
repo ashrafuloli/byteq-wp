@@ -2540,7 +2540,7 @@ function wp_insert_term( $term, $taxonomy, $args = array() ) {
 	 *
 	 * Term parent + taxonomy + slug combinations are meant to be unique, and wp_insert_term()
 	 * performs a last-minute confirmation of this uniqueness before allowing a new term
-	 * to be created. Plugins with different uniqueness requirements may use this filter
+	 * to be created. Plugins with different uniqueness byteq may use this filter
 	 * to bypass or modify the duplicate-term check.
 	 *
 	 * @since 5.1.0

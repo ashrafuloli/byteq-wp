@@ -74,7 +74,7 @@ class WP_Image_Editor_Imagick extends WP_Image_Editor {
 			'readimageblob',
 		);
 
-		// Now, test for deep requirements within Imagick.
+		// Now, test for deep byteq within Imagick.
 		if ( ! defined( 'imagick::COMPRESSION_JPEG' ) ) {
 			return false;
 		}

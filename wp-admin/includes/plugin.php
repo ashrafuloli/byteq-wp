@@ -642,9 +642,9 @@ function activate_plugin( $plugin, $redirect = '', $network_wide = false, $silen
 		return $valid;
 	}
 
-	$requirements = validate_plugin_requirements( $plugin );
-	if ( is_wp_error( $requirements ) ) {
-		return $requirements;
+	$byteq = validate_plugin_byteq( $plugin );
+	if ( is_wp_error( $byteq ) ) {
+		return $byteq;
 	}
 
 	if ( $network_wide && ! isset( $current[ $plugin ] )
@@ -1107,7 +1107,7 @@ function validate_plugin( $plugin ) {
 }
 
 /**
- * Validates the plugin requirements for WordPress version and PHP version.
+ * Validates the plugin byteq for WordPress version and PHP version.
  *
  * Uses the information from `Requires at least` and `Requires PHP` headers
  * defined in the plugin's main PHP file.
@@ -1118,18 +1118,18 @@ function validate_plugin( $plugin ) {
  * @since 5.8.0 Removed support for using `readme.txt` as a fallback.
  *
  * @param string $plugin Path to the plugin file relative to the plugins directory.
- * @return true|WP_Error True if requirements are met, WP_Error on failure.
+ * @return true|WP_Error True if byteq are met, WP_Error on failure.
  */
-function validate_plugin_requirements( $plugin ) {
+function validate_plugin_byteq( $plugin ) {
 	$plugin_headers = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
 
-	$requirements = array(
+	$byteq = array(
 		'requires'     => ! empty( $plugin_headers['RequiresWP'] ) ? $plugin_headers['RequiresWP'] : '',
 		'requires_php' => ! empty( $plugin_headers['RequiresPHP'] ) ? $plugin_headers['RequiresPHP'] : '',
 	);
 
-	$compatible_wp  = is_wp_version_compatible( $requirements['requires'] );
-	$compatible_php = is_php_version_compatible( $requirements['requires_php'] );
+	$compatible_wp  = is_wp_version_compatible( $byteq['requires'] );
+	$compatible_php = is_php_version_compatible( $byteq['requires_php'] );
 
 	$php_update_message = '</p><p>' . sprintf(
 		/* translators: %s: URL to Update PHP page. */
@@ -1148,12 +1148,12 @@ function validate_plugin_requirements( $plugin ) {
 			'plugin_wp_php_incompatible',
 			'<p>' . sprintf(
 				/* translators: 1: Current WordPress version, 2: Current PHP version, 3: Plugin name, 4: Required WordPress version, 5: Required PHP version. */
-				_x( '<strong>Error:</strong> Current versions of WordPress (%1$s) and PHP (%2$s) do not meet minimum requirements for %3$s. The plugin requires WordPress %4$s and PHP %5$s.', 'plugin' ),
+				_x( '<strong>Error:</strong> Current versions of WordPress (%1$s) and PHP (%2$s) do not meet minimum byteq for %3$s. The plugin requires WordPress %4$s and PHP %5$s.', 'plugin' ),
 				get_bloginfo( 'version' ),
 				PHP_VERSION,
 				$plugin_headers['Name'],
-				$requirements['requires'],
-				$requirements['requires_php']
+				$byteq['requires'],
+				$byteq['requires_php']
 			) . $php_update_message . '</p>'
 		);
 	} elseif ( ! $compatible_php ) {
@@ -1161,10 +1161,10 @@ function validate_plugin_requirements( $plugin ) {
 			'plugin_php_incompatible',
 			'<p>' . sprintf(
 				/* translators: 1: Current PHP version, 2: Plugin name, 3: Required PHP version. */
-				_x( '<strong>Error:</strong> Current PHP version (%1$s) does not meet minimum requirements for %2$s. The plugin requires PHP %3$s.', 'plugin' ),
+				_x( '<strong>Error:</strong> Current PHP version (%1$s) does not meet minimum byteq for %2$s. The plugin requires PHP %3$s.', 'plugin' ),
 				PHP_VERSION,
 				$plugin_headers['Name'],
-				$requirements['requires_php']
+				$byteq['requires_php']
 			) . $php_update_message . '</p>'
 		);
 	} elseif ( ! $compatible_wp ) {
@@ -1172,10 +1172,10 @@ function validate_plugin_requirements( $plugin ) {
 			'plugin_wp_incompatible',
 			'<p>' . sprintf(
 				/* translators: 1: Current WordPress version, 2: Plugin name, 3: Required WordPress version. */
-				_x( '<strong>Error:</strong> Current WordPress version (%1$s) does not meet minimum requirements for %2$s. The plugin requires WordPress %3$s.', 'plugin' ),
+				_x( '<strong>Error:</strong> Current WordPress version (%1$s) does not meet minimum byteq for %2$s. The plugin requires WordPress %3$s.', 'plugin' ),
 				get_bloginfo( 'version' ),
 				$plugin_headers['Name'],
-				$requirements['requires']
+				$byteq['requires']
 			) . '</p>'
 		);
 	}

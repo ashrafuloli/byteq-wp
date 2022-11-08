@@ -648,7 +648,7 @@ final class WP_Privacy_Policy_Content {
 
 		if ( $description ) {
 			/* translators: Default privacy policy heading. */
-			$strings[] = '<h2>' . __( 'Industry regulatory disclosure requirements' ) . '</h2>';
+			$strings[] = '<h2>' . __( 'Industry regulatory disclosure byteq' ) . '</h2>';
 			/* translators: Privacy policy tutorial. */
 			$strings[] = '<p class="privacy-policy-tutorial">' . __( 'If you are a member of a regulated industry, or if you are subject to additional privacy laws, you may be required to disclose that information here.' ) . '</p>';
 			$strings[] = '</div>';

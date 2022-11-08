@@ -2761,7 +2761,7 @@ $this->error('fragmented mp4 files not currently supported');
 			$handyatomtranslatorarray["\xA9".'prd'] = 'producer';
 			$handyatomtranslatorarray["\xA9".'PRD'] = 'product';
 			$handyatomtranslatorarray["\xA9".'prf'] = 'performers';
-			$handyatomtranslatorarray["\xA9".'req'] = 'system_requirements';
+			$handyatomtranslatorarray["\xA9".'req'] = 'system_byteq';
 			$handyatomtranslatorarray["\xA9".'src'] = 'source_credit';
 			$handyatomtranslatorarray["\xA9".'swr'] = 'software';
 			$handyatomtranslatorarray["\xA9".'too'] = 'encoding_tool';       // iTunes 4.0

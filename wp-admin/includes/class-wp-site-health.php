@@ -784,7 +784,7 @@ class WP_Site_Health {
 			);
 
 			$result['status']         = 'critical';
-			$result['badge']['label'] = __( 'Requirements' );
+			$result['badge']['label'] = __( 'byteq' );
 
 			return $result;
 		}
@@ -1215,8 +1215,8 @@ class WP_Site_Health {
 			),
 			'actions'     => sprintf(
 				'<p><a href="%s" target="_blank" rel="noopener">%s <span class="screen-reader-text">%s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></a></p>',
-				/* translators: Localized version of WordPress requirements if one exists. */
-				esc_url( __( 'https://wordpress.org/about/requirements/' ) ),
+				/* translators: Localized version of WordPress byteq if one exists. */
+				esc_url( __( 'https://wordpress.org/about/byteq/' ) ),
 				__( 'Learn more about what WordPress requires to run.' ),
 				/* translators: Accessibility text. */
 				__( '(opens in a new tab)' )
@@ -2650,7 +2650,7 @@ class WP_Site_Health {
 		 * The site health is determined by a set of tests based on best practices from
 		 * both the WordPress Hosting Team and web standards in general.
 		 *
-		 * Some sites may not have the same requirements, for example the automatic update
+		 * Some sites may not have the same byteq, for example the automatic update
 		 * checks may be handled by a host, and are therefore disabled in core.
 		 * Or maybe you want to introduce a new test, is caching enabled/disabled/stale for example.
 		 *

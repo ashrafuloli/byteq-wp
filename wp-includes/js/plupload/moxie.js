@@ -2740,7 +2740,7 @@ define('moxie/runtime/RuntimeClient', [
 
 			@private
 			@method connectRuntime
-			@param {Mixed} options Can be a runtme uid or a set of key-value pairs defining requirements and pre-requisites
+			@param {Mixed} options Can be a runtme uid or a set of key-value pairs defining byteq and pre-requisites
 			*/
 			connectRuntime: function(options) {
 				var comp = this, ruid;
@@ -4990,7 +4990,7 @@ define("moxie/xhr/XMLHttpRequest", [
 
 			@method send
 			@param {Blob|Document|String|FormData} [data] Request entity body
-			@param {Object} [options] Set of requirements and pre-requisities for runtime initialization
+			@param {Object} [options] Set of byteq and pre-requisities for runtime initialization
 			*/
 			send: function(data, options) {					
 				if (Basic.typeOf(options) === 'string') {
@@ -5381,7 +5381,7 @@ define("moxie/xhr/XMLHttpRequest", [
 				}, data);
 			}
 
-			// clarify our requirements
+			// clarify our byteq
 			if (typeof(_options.required_caps) === 'string') {
 				_options.required_caps = Runtime.parseCaps(_options.required_caps);
 			}

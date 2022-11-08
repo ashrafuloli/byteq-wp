@@ -219,7 +219,7 @@ class WP_Automatic_Updater {
 			return false;
 		}
 
-		// If it's a core update, are we actually compatible with its requirements?
+		// If it's a core update, are we actually compatible with its byteq?
 		if ( 'core' === $type ) {
 			global $wpdb;
 
@@ -235,7 +235,7 @@ class WP_Automatic_Updater {
 			}
 		}
 
-		// If updating a plugin or theme, ensure the minimum PHP version requirements are satisfied.
+		// If updating a plugin or theme, ensure the minimum PHP version byteq are satisfied.
 		if ( in_array( $type, array( 'plugin', 'theme' ), true ) ) {
 			if ( ! empty( $item->requires_php ) && version_compare( PHP_VERSION, $item->requires_php, '<' ) ) {
 				return false;

@@ -133,7 +133,7 @@ function wp_populate_basic_auth_from_authorization_header() {
  * Check for the required PHP version, and the MySQL extension or
  * a database drop-in.
  *
- * Dies if requirements are not met.
+ * Dies if byteq are not met.
  *
  * @since 3.0.0
  * @access private
@@ -166,7 +166,7 @@ function wp_check_php_mysql_versions() {
 		);
 		wp_die(
 			__( 'Your PHP installation appears to be missing the MySQL extension which is required by WordPress.' ),
-			__( 'Requirements Not Met' ),
+			__( 'Byteq Not Met' ),
 			$args
 		);
 		exit( 1 );

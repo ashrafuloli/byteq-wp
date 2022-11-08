@@ -30,7 +30,7 @@
 # change the hash type identifier (the "$P$") to something different.
 #
 # Obviously, since this code is in the public domain, the above are not
-# requirements (there can be none), but merely suggestions.
+# byteq (there can be none), but merely suggestions.
 #
 
 /**

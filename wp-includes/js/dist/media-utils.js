@@ -91,7 +91,7 @@ const getFeaturedImageMediaFrame = () => {
     },
 
     /**
-     * Handle the edit state requirements of selected media item.
+     * Handle the edit state byteq of selected media item.
      *
      * @return {void}
      */
@@ -174,7 +174,7 @@ const getGalleryDetailsMediaFrame = () => {
     },
 
     /**
-     * Handle the edit state requirements of selected media item.
+     * Handle the edit state byteq of selected media item.
      *
      * @return {void}
      */
@@ -353,7 +353,7 @@ class MediaUpload extends external_wp_element_namespaceObject.Component {
     this.initializeListeners();
   }
   /**
-   * Initializes the Media Library requirements for the featured image flow.
+   * Initializes the Media Library byteq for the featured image flow.
    *
    * @return {void}
    */
